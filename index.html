@@ -6,8 +6,39 @@
     <title>array-carousel</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="text/javascript" src="/js/main.js" async></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
-    <p class="text-red-500">dd</p>
+    <main>
+      <div class="container my-0 mx-auto transition-all">
+        <div class="flex items-center justify-center h-screen">
+          <div class="grid grid-cols-8 grid-rows-5 gap-1 p-5 md:p-[100px] xl:p-[200px] w-full">
+            <div class="col-span-6 row-span-5">
+              <div class="aspect-video relative filter-box">
+                <img class="slider-img" src="./img/01.webp" />
+              </div>
+            </div>
+            <div class="col-span-2 row-span-5 col-start-7">
+              <div class="aspect-video relative filter-box flex flex-col h-100 gap-1">
+                <div class="icon-wrapper" id="domArrowUp"><i class="fa-solid fa-circle-up arrow-up"></i></div>
+                <img class="side-img object-[50%,25%]" src="./img/01.webp" />
+                <img class="side-img gray-scale object-[50%,35%]" src="./img/02.webp" />
+                <img class="side-img gray-scale" src="./img/03.webp" />
+                <img class="side-img gray-scale" src="./img/04.webp" />
+                <img class="side-img gray-scale" src="./img/05.webp" />
+                <div class="icon-wrapper" id="domArrowDown"><i class="fa-solid fa-circle-down arrow-down"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
