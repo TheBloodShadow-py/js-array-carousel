@@ -7,6 +7,8 @@ const domSliderImg = document.querySelector(".slider-img");
 let tempAside;
 let nextAside;
 
+document.onload = hiddenSpin();
+
 const imgArr = ["./img/02.webp", "./img/03.webp", "./img/04.webp", "./img/05.webp", "./img/01.webp"];
 
 domArrowDown.addEventListener("click", nextImg);
@@ -27,6 +29,7 @@ function prevImg() {
     domSliderImg.classList.add("fade-in");
   }, 300);
   domSliderImg.classList.remove("fade-in");
+  return;
 }
 
 function nextImg() {
@@ -44,6 +47,7 @@ function nextImg() {
     domSliderImg.classList.add("fade-in");
   }, 300);
   domSliderImg.classList.remove("fade-in");
+  return;
 }
 
 function asideSwitcherDown() {
@@ -67,6 +71,7 @@ function asideSwitcherDown() {
   }
   tempAside.classList.add("gray-scale");
   nextAside.classList.remove("gray-scale");
+  return;
 }
 
 function asideSwitcherUp() {
@@ -90,6 +95,7 @@ function asideSwitcherUp() {
   }
   tempAside.classList.add("gray-scale");
   nextAside.classList.remove("gray-scale");
+  return;
 }
 
 function searchPosition(arr, src) {
@@ -99,4 +105,15 @@ function searchPosition(arr, src) {
     }
   }
   return false;
+}
+
+function hiddenSpin() {
+  setTimeout(() => {
+    const spinner = document.querySelector(".loader");
+    spinner.classList.remove("opacity-100");
+    spinner.classList.add("opacity-0");
+    setTimeout(() => {
+      spinner.classList.add("hidden");
+    }, 500);
+  }, 1500);
 }
