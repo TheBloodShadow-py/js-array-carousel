@@ -29,7 +29,7 @@
   height: 100%;
   object-fit: cover;
   object-position: right;
-  transition: opacity 0.3s linear;
+  transition: opacity 0.5s linear;
   border-radius: 5px;
 }
 

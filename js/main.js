@@ -15,7 +15,6 @@ domArrowDown.addEventListener("click", nextImg);
 domArrowUp.addEventListener("click", prevImg);
 
 function prevImg() {
-  asideSwitcherUp();
   const currentSrcImg = domSliderImg.src;
   const currentPosition = searchPosition(imgArr, currentSrcImg);
   domSliderImg.classList.add("fade-out");
@@ -28,12 +27,32 @@ function prevImg() {
     domSliderImg.classList.remove("fade-out");
     domSliderImg.classList.add("fade-in");
   }, 300);
+
+  if (currentPosition === 4) {
+    tempAside = document.querySelector(".side-img-0");
+    nextAside = document.querySelector(".side-img-4");
+  } else if (currentPosition === 3) {
+    tempAside = document.querySelector(".side-img-4");
+    nextAside = document.querySelector(".side-img-3");
+  } else if (currentPosition === 2) {
+    tempAside = document.querySelector(".side-img-3");
+    nextAside = document.querySelector(".side-img-2");
+  } else if (currentPosition === 1) {
+    tempAside = document.querySelector(".side-img-2");
+    nextAside = document.querySelector(".side-img-1");
+  } else if (currentPosition === 0) {
+    tempAside = document.querySelector(".side-img-1");
+    nextAside = document.querySelector(".side-img-0");
+  }
+  tempAside.classList.add("gray-scale");
+  nextAside.classList.remove("gray-scale");
+
   domSliderImg.classList.remove("fade-in");
+
   return;
 }
 
 function nextImg() {
-  asideSwitcherDown();
   const currentSrcImg = domSliderImg.src;
   const currentPosition = searchPosition(imgArr, currentSrcImg);
   domSliderImg.classList.add("fade-out");
@@ -46,55 +65,25 @@ function nextImg() {
     domSliderImg.classList.remove("fade-out");
     domSliderImg.classList.add("fade-in");
   }, 300);
+  if (currentPosition === 4) {
+    tempAside = document.querySelector(".side-img-0");
+    nextAside = document.querySelector(".side-img-1");
+  } else if (currentPosition === 0) {
+    tempAside = document.querySelector(".side-img-1");
+    nextAside = document.querySelector(".side-img-2");
+  } else if (currentPosition === 1) {
+    tempAside = document.querySelector(".side-img-2");
+    nextAside = document.querySelector(".side-img-3");
+  } else if (currentPosition === 2) {
+    tempAside = document.querySelector(".side-img-3");
+    nextAside = document.querySelector(".side-img-4");
+  } else if (currentPosition === 3) {
+    tempAside = document.querySelector(".side-img-4");
+    nextAside = document.querySelector(".side-img-0");
+  }
+  tempAside.classList.add("gray-scale");
+  nextAside.classList.remove("gray-scale");
   domSliderImg.classList.remove("fade-in");
-  return;
-}
-
-function asideSwitcherDown() {
-  const currentSrcImg = domSliderImg.src;
-  const currentPosition = searchPosition(imgArr, currentSrcImg);
-  if (currentPosition === 4) {
-    tempAside = document.querySelector(".side-img-0");
-    nextAside = document.querySelector(".side-img-1");
-  } else if (currentPosition === 0) {
-    tempAside = document.querySelector(".side-img-1");
-    nextAside = document.querySelector(".side-img-2");
-  } else if (currentPosition === 1) {
-    tempAside = document.querySelector(".side-img-2");
-    nextAside = document.querySelector(".side-img-3");
-  } else if (currentPosition === 2) {
-    tempAside = document.querySelector(".side-img-3");
-    nextAside = document.querySelector(".side-img-4");
-  } else if (currentPosition === 3) {
-    tempAside = document.querySelector(".side-img-4");
-    nextAside = document.querySelector(".side-img-0");
-  }
-  tempAside.classList.add("gray-scale");
-  nextAside.classList.remove("gray-scale");
-  return;
-}
-
-function asideSwitcherUp() {
-  const currentSrcImg = domSliderImg.src;
-  const currentPosition = searchPosition(imgArr, currentSrcImg);
-  if (currentPosition === 4) {
-    tempAside = document.querySelector(".side-img-0");
-    nextAside = document.querySelector(".side-img-4");
-  } else if (currentPosition === 3) {
-    tempAside = document.querySelector(".side-img-4");
-    nextAside = document.querySelector(".side-img-3");
-  } else if (currentPosition === 2) {
-    tempAside = document.querySelector(".side-img-3");
-    nextAside = document.querySelector(".side-img-2");
-  } else if (currentPosition === 1) {
-    tempAside = document.querySelector(".side-img-2");
-    nextAside = document.querySelector(".side-img-1");
-  } else if (currentPosition === 0) {
-    tempAside = document.querySelector(".side-img-1");
-    nextAside = document.querySelector(".side-img-0");
-  }
-  tempAside.classList.add("gray-scale");
-  nextAside.classList.remove("gray-scale");
   return;
 }
 
