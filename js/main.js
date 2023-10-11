@@ -104,7 +104,7 @@ function searchPosition(arr, src) {
       return i;
     }
   }
-  return false;
+  return console.log(`not found in this array: ${arr}`);
 }
 
 function hiddenSpin() {
